@@ -32,4 +32,9 @@ describe BowlingScorer do
     12.times { game.roll(10) }
     game.score.should == 300
   end
+
+  it "allows only a valid number rolls to be scored" do
+    22.times { game.roll(1) }
+    game.score.should == 20
+  end
 end
